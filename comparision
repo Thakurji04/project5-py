@@ -1,0 +1,18 @@
+#comparision of two files using path of file
+import difflib #importing library
+
+# importing files in program
+file1 = "E:\\BCA\\file2.txt" #file one location
+file2 = "E:\\file1.txt" #file two location
+
+#reading files document line by line
+line1 = open(file1).readlines()
+line2 = open(file2).readlines()
+
+difference = difflib.HtmlDiff().make_file(line1, line2, file1, file2) #using make_file() to create a html file that takes 4 arguments:
+                                                                      # 2 read documents and 2 file locations to be displayed
+report = open ('E:\\report.html','w') # opening html file in writable mode along with location descibed
+report.write(difference) # writing down the differnces in Html files
+report.close() #closing the report file
+
+#Html file has been saved in the described location.
